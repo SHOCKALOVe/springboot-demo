@@ -9,14 +9,16 @@ import javax.persistence.*;
 @Table(name = "EMPLOYEE")
 public class Employee {
 
-    @Id
-   @GeneratedValue
-   @Column(name = "ID")
-   private  Integer id;
+    public Employee() {
+    }
+    public Employee(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
-   @Column(name = "FIRST_NAME")
-   private String firstName;
+    @Id @GeneratedValue @Column(name = "ID") private  Integer id;
 
-   @Column(name = "LAST_NAME")
-   private  String lastName;
+   @Column(name = "FIRST_NAME") private String firstName;
+
+   @Column(name = "LAST_NAME") private  String lastName;
 }
